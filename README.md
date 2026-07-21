@@ -66,3 +66,10 @@ contract.on("GreetingUpdated", (updater, newGreeting) => {
 function resetGreeting() public onlyOwner {
     greeting = "Hello from Base!";
 }
+
+### Renounce Ownership
+
+```solidity
+function renounceOwnership() public onlyOwner {
+    owner = address(0);
+}
