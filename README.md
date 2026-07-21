@@ -12,3 +12,12 @@ Low fees and strong developer focus make it ideal for experimenting and building
 - Explorer: https://base.blockscout.com
 
 Starting to collect good learning materials here.
+
+### Why Base is Great for Developers
+
+- Very low transaction fees
+- Fast confirmations
+- Strong support from Coinbase
+- Easy to deploy and test contracts
+
+This repo will track my progress as I build on it.
