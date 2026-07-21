@@ -42,3 +42,13 @@ contract HelloBase {
 <input id="newGreeting" placeholder="New greeting" />
 <button onclick="setGreeting()">Update Greeting</button>
 <p id="greetingDisplay"></p>
+
+### HelloBase with Events
+
+```solidity
+event GreetingUpdated(address updater, string newGreeting);
+
+function setGreeting(string memory _greeting) public {
+    greeting = _greeting;
+    emit GreetingUpdated(msg.sender, _greeting);
+}
