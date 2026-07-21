@@ -110,3 +110,10 @@ function isPaused() public view returns (bool) {
 receive() external payable {
     // contract can receive ETH
 }
+
+### Fallback
+
+```solidity
+fallback() external {
+    revert("Function does not exist");
+}
