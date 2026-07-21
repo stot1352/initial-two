@@ -103,3 +103,10 @@ event ContractUnpaused(address by);
 function isPaused() public view returns (bool) {
     return paused;
 }
+
+### Receive ETH
+
+```solidity
+receive() external payable {
+    // contract can receive ETH
+}
