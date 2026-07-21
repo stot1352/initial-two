@@ -124,3 +124,10 @@ fallback() external {
 function supportsInterface(bytes4 interfaceId) public pure returns (bool) {
     return interfaceId == 0x01ffc9a7; // ERC165
 }
+
+### Contract Balance Function
+
+```solidity
+function getBalance() public view returns (uint256) {
+    return address(this).balance;
+}
