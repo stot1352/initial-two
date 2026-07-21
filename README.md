@@ -52,3 +52,10 @@ function setGreeting(string memory _greeting) public {
     greeting = _greeting;
     emit GreetingUpdated(msg.sender, _greeting);
 }
+
+### Event Listener for Greeting Updates
+
+```javascript
+contract.on("GreetingUpdated", (updater, newGreeting) => {
+  document.getElementById("greetingDisplay").innerText = newGreeting;
+});
