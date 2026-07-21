@@ -96,3 +96,10 @@ function setGreeting(...) public whenNotPaused {
 ```solidity
 event ContractPaused(address by);
 event ContractUnpaused(address by);
+
+### View Functions
+
+```solidity
+function isPaused() public view returns (bool) {
+    return paused;
+}
