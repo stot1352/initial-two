@@ -35,3 +35,10 @@ contract HelloBase {
         greeting = _greeting;
     }
 }
+
+### Frontend for HelloBase Contract
+
+```html
+<input id="newGreeting" placeholder="New greeting" />
+<button onclick="setGreeting()">Update Greeting</button>
+<p id="greetingDisplay"></p>
