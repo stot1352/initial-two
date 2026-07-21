@@ -21,3 +21,17 @@ Starting to collect good learning materials here.
 - Easy to deploy and test contracts
 
 This repo will track my progress as I build on it.
+
+### My First Solidity Contract on Base
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract HelloBase {
+    string public greeting = "Hello from Base!";
+
+    function setGreeting(string memory _greeting) public {
+        greeting = _greeting;
+    }
+}
