@@ -90,3 +90,9 @@ function resetGreeting() public onlyOwner {
 function setGreeting(...) public whenNotPaused {
     // only works when not paused
 }
+
+### Pause Events
+
+```solidity
+event ContractPaused(address by);
+event ContractUnpaused(address by);
