@@ -83,3 +83,10 @@ function resetGreeting() public onlyOwner {
     greeting = "Hello from Base!";
     emit GreetingReset(msg.sender);
 }
+
+### Pause Mechanism
+
+```solidity
+function setGreeting(...) public whenNotPaused {
+    // only works when not paused
+}
