@@ -59,3 +59,10 @@ function setGreeting(string memory _greeting) public {
 contract.on("GreetingUpdated", (updater, newGreeting) => {
   document.getElementById("greetingDisplay").innerText = newGreeting;
 });
+
+### Owner-only Functions
+
+```solidity
+function resetGreeting() public onlyOwner {
+    greeting = "Hello from Base!";
+}
