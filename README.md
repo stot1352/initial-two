@@ -73,3 +73,13 @@ function resetGreeting() public onlyOwner {
 function renounceOwnership() public onlyOwner {
     owner = address(0);
 }
+
+### More Events
+
+```solidity
+event GreetingReset(address byOwner);
+
+function resetGreeting() public onlyOwner {
+    greeting = "Hello from Base!";
+    emit GreetingReset(msg.sender);
+}
