@@ -239,3 +239,12 @@ function getVersion() public pure returns (string memory) {
 function getContractBalance() public view returns (uint256) {
     return address(this).balance;
 }
+
+### Get Version
+
+```solidity
+string public version = "1.0";
+
+function getVersion() public pure returns (string memory) {
+    return version;
+}
