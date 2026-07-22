@@ -188,3 +188,10 @@ function supportsInterface(bytes4 interfaceId) public pure returns (bool) {
 fallback() external {
     revert("Function does not exist");
 }
+
+### Is Paused View
+
+```solidity
+function isPaused() public view returns (bool) {
+    return paused;
+}
