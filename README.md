@@ -216,3 +216,10 @@ function getPaused() public view returns (bool) {
 function isOwner(address account) public view returns (bool) {
     return account == owner;
 }
+
+### Is Owner View
+
+```solidity
+function isOwner(address account) public view returns (bool) {
+    return account == owner;
+}
