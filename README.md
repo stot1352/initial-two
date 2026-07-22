@@ -168,3 +168,10 @@ function getPaused() public view returns (bool) {
 function getContractBalance() public view returns (uint256) {
     return address(this).balance;
 }
+
+### Get Owner
+
+```solidity
+function getOwner() public view returns (address) {
+    return owner;
+}
