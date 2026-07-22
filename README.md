@@ -161,3 +161,10 @@ function isOwner(address account) public view returns (bool) {
 function getPaused() public view returns (bool) {
     return paused;
 }
+
+### Contract Balance
+
+```solidity
+function getContractBalance() public view returns (uint256) {
+    return address(this).balance;
+}
