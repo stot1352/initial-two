@@ -255,3 +255,10 @@ function getVersion() public pure returns (string memory) {
 function isOwner(address account) public view returns (bool) {
     return account == owner;
 }
+
+### Get Paused Status
+
+```solidity
+function getPausedStatus() public view returns (bool) {
+    return paused;
+}
