@@ -410,3 +410,14 @@ function toggleDepositsPause() public onlyOwner {
 function setBlacklist(address user, bool status) public onlyOwner {
     isBlacklisted[user] = status;
 }
+
+### Whitelist Management
+
+```solidity
+function setWhitelist(address user, bool status) public onlyOwner {
+    isWhitelisted[user] = status;
+}
+
+function toggleWhitelist() public onlyOwner {
+    whitelistEnabled = !whitelistEnabled;
+}
