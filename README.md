@@ -396,3 +396,10 @@ function setMinDeposit(uint256 _min) public onlyOwner {
 function getDepositInfo(address user) public view returns (uint256 balance, uint256 count, uint256 last) {
     return (balances[user], depositCount[user], lastDeposit[user]);
 }
+
+### Toggle Deposits Pause
+
+```solidity
+function toggleDepositsPause() public onlyOwner {
+    depositsPaused = !depositsPaused;
+}
