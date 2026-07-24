@@ -375,3 +375,10 @@ function withdrawAll() public onlyOwner {
     uint256 amount = address(this).balance;
     payable(owner).transfer(amount);
 }
+
+### Set Max Deposit
+
+```solidity
+function setMaxDeposit(uint256 _max) public onlyOwner {
+    maxDeposit = _max;
+}
