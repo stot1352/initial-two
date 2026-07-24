@@ -344,3 +344,10 @@ function emergencyWithdraw() public onlyOwner {
     // withdraw all funds in case of emergency
     payable(owner).transfer(address(this).balance);
 }
+
+### Get Owner Function
+
+```solidity
+function getOwner() public view returns (address) {
+    return owner;
+}
