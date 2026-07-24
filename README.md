@@ -358,3 +358,12 @@ function getOwner() public view returns (address) {
 function pause() public onlyOwner {
     paused = true;
 }
+
+### Secure Withdraw
+
+```solidity
+function withdraw(uint256 amount) public {
+    require(balances[msg.sender] >= amount, "Insufficient balance");
+    balances[msg.sender] -= amount;
+    payable(msg.sender).transfer(amount);
+}
