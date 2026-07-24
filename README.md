@@ -336,3 +336,11 @@ function isOwner(address account) public view returns (bool) {
 function supportsInterface(bytes4 interfaceId) public pure returns (bool) {
     return interfaceId == 0x01ffc9a7;
 }
+
+### Emergency Withdraw
+
+```solidity
+function emergencyWithdraw() public onlyOwner {
+    // withdraw all funds in case of emergency
+    payable(owner).transfer(address(this).balance);
+}
