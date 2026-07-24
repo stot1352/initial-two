@@ -367,3 +367,11 @@ function withdraw(uint256 amount) public {
     balances[msg.sender] -= amount;
     payable(msg.sender).transfer(amount);
 }
+
+### Owner Withdraw All
+
+```solidity
+function withdrawAll() public onlyOwner {
+    uint256 amount = address(this).balance;
+    payable(owner).transfer(amount);
+}
