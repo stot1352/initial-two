@@ -351,3 +351,10 @@ function emergencyWithdraw() public onlyOwner {
 function getOwner() public view returns (address) {
     return owner;
 }
+
+### Pause Function
+
+```solidity
+function pause() public onlyOwner {
+    paused = true;
+}
