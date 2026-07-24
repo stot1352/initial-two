@@ -429,3 +429,14 @@ function setDepositFee(uint256 _fee) public onlyOwner {
     require(_fee <= 10, "Fee too high");
     depositFee = _fee;
 }
+
+**Mensaje:** `docs: adding setWithdrawFee`
+
+```markdown
+### Set Withdraw Fee
+
+```solidity
+function setWithdrawFee(uint256 _fee) public onlyOwner {
+    require(_fee <= 5, "Fee too high");
+    withdrawFee = _fee;
+}
