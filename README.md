@@ -421,3 +421,11 @@ function setWhitelist(address user, bool status) public onlyOwner {
 function toggleWhitelist() public onlyOwner {
     whitelistEnabled = !whitelistEnabled;
 }
+
+### Set Deposit Fee
+
+```solidity
+function setDepositFee(uint256 _fee) public onlyOwner {
+    require(_fee <= 10, "Fee too high");
+    depositFee = _fee;
+}
