@@ -382,3 +382,10 @@ function withdrawAll() public onlyOwner {
 function setMaxDeposit(uint256 _max) public onlyOwner {
     maxDeposit = _max;
 }
+
+### Set Min Deposit
+
+```solidity
+function setMinDeposit(uint256 _min) public onlyOwner {
+    minDeposit = _min;
+}
