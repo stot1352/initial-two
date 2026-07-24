@@ -389,3 +389,10 @@ function setMaxDeposit(uint256 _max) public onlyOwner {
 function setMinDeposit(uint256 _min) public onlyOwner {
     minDeposit = _min;
 }
+
+### Get Deposit Info
+
+```solidity
+function getDepositInfo(address user) public view returns (uint256 balance, uint256 count, uint256 last) {
+    return (balances[user], depositCount[user], lastDeposit[user]);
+}
