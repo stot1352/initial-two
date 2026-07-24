@@ -403,3 +403,10 @@ function getDepositInfo(address user) public view returns (uint256 balance, uint
 function toggleDepositsPause() public onlyOwner {
     depositsPaused = !depositsPaused;
 }
+
+### Blacklist Management
+
+```solidity
+function setBlacklist(address user, bool status) public onlyOwner {
+    isBlacklisted[user] = status;
+}
