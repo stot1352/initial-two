@@ -440,3 +440,10 @@ function setWithdrawFee(uint256 _fee) public onlyOwner {
     require(_fee <= 5, "Fee too high");
     withdrawFee = _fee;
 }
+
+### Get Fees Collected
+
+```solidity
+function getFeesCollected() public view returns (uint256) {
+    return totalFeesCollected;
+}
