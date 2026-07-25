@@ -478,3 +478,8 @@ function deposit(address _referrer) public payable {
 function setMaxReferralReward(uint256 _max) public onlyOwner {
     maxReferralReward = _max;
 }
+
+### Anti Self-Referral
+
+```solidity
+require(_referrer != msg.sender, "Cannot refer yourself");
