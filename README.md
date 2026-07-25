@@ -471,3 +471,10 @@ function deposit(address _referrer) public payable {
         pendingReferralRewards[referrer[msg.sender]] += reward;
     }
 }
+
+### Set Max Referral Reward
+
+```solidity
+function setMaxReferralReward(uint256 _max) public onlyOwner {
+    maxReferralReward = _max;
+}
