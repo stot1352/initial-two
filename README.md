@@ -460,3 +460,14 @@ function deposit(address _referrer) public payable {
         balances[referrer[msg.sender]] += reward;
     }
 }
+
+### Pending Rewards Tracking
+
+```solidity
+function deposit(address _referrer) public payable {
+    // existing code...
+    if (referrer[msg.sender] != address(0)) {
+        uint256 reward = (msg.value * referralReward) / 100;
+        pendingReferralRewards[referrer[msg.sender]] += reward;
+    }
+}
