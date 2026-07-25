@@ -447,3 +447,16 @@ function setWithdrawFee(uint256 _fee) public onlyOwner {
 function getFeesCollected() public view returns (uint256) {
     return totalFeesCollected;
 }
+
+### Referral Reward
+
+```solidity
+uint256 public referralReward = 1; // 1%
+
+function deposit(address _referrer) public payable {
+    // ... existing code
+    if (referrer[msg.sender] != address(0)) {
+        uint256 reward = (msg.value * referralReward) / 100;
+        balances[referrer[msg.sender]] += reward;
+    }
+}
