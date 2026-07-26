@@ -556,3 +556,11 @@ function emergencyUnstake(address user) public onlyOwner {
 function setRewardRate(uint256 _rate) public onlyOwner {
     rewardRate = _rate;
 }
+
+### Set Min Stake
+
+```solidity
+function setMinStake(uint256 _min) public onlyOwner {
+    minStake = _min;
+}
+
