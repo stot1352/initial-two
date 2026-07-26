@@ -502,3 +502,10 @@ function stake() public payable {
     stakedAmount[msg.sender] += msg.value;
     stakeTimestamp[msg.sender] = block.timestamp;
 }
+
+### Set Lock Period
+
+```solidity
+function setLockPeriod(uint256 _period) public onlyOwner {
+    lockPeriod = _period;
+}
