@@ -492,3 +492,13 @@ function unstake(uint256 amount) public {
     stakedAmount[msg.sender] -= amount;
     payable(msg.sender).transfer(amount);
 }
+
+### Update Rewards on Stake
+
+```solidity
+function stake() public payable {
+    // Update previous rewards first
+    pendingStakeRewards[msg.sender] += calculateReward(msg.sender);
+    stakedAmount[msg.sender] += msg.value;
+    stakeTimestamp[msg.sender] = block.timestamp;
+}
