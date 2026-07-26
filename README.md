@@ -575,3 +575,10 @@ function stake() public payable {
     lastStakeTime[msg.sender] = block.timestamp;
     totalStaked += msg.value;
 }
+
+### Toggle Staking Pause
+
+```solidity
+function toggleStakingPause() public onlyOwner {
+    stakingPaused = !stakingPaused;
+}
