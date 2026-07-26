@@ -509,3 +509,11 @@ function stake() public payable {
 function setLockPeriod(uint256 _period) public onlyOwner {
     lockPeriod = _period;
 }
+
+### Set Early Penalty
+
+```solidity
+function setEarlyPenalty(uint256 _penalty) public onlyOwner {
+    require(_penalty <= 20, "Penalty too high");
+    earlyPenalty = _penalty;
+}
