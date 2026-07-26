@@ -529,3 +529,13 @@ function compound() public {
     stakedAmount[msg.sender] += reward;
     emit Compounded(msg.sender, reward);
 }
+
+### Update Total Staked on Unstake
+
+```solidity
+function unstake(uint256 amount) public {
+    require(stakedAmount[msg.sender] >= amount, "Not enough");
+    stakedAmount[msg.sender] -= amount;
+    totalStaked -= amount;
+    payable(msg.sender).transfer(amount);
+}
