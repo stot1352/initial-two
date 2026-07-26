@@ -517,3 +517,15 @@ function setEarlyPenalty(uint256 _penalty) public onlyOwner {
     require(_penalty <= 20, "Penalty too high");
     earlyPenalty = _penalty;
 }
+
+### Compound Event
+
+```solidity
+event Compounded(address indexed user, uint256 amount);
+
+function compound() public {
+    uint256 reward = calculateReward(msg.sender);
+    pendingStakeRewards[msg.sender] = 0;
+    stakedAmount[msg.sender] += reward;
+    emit Compounded(msg.sender, reward);
+}
