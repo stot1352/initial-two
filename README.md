@@ -483,3 +483,12 @@ function setMaxReferralReward(uint256 _max) public onlyOwner {
 
 ```solidity
 require(_referrer != msg.sender, "Cannot refer yourself");
+
+### Unstake Function Sketch
+
+```solidity
+function unstake(uint256 amount) public {
+    require(stakedAmount[msg.sender] >= amount, "Not enough staked");
+    stakedAmount[msg.sender] -= amount;
+    payable(msg.sender).transfer(amount);
+}
