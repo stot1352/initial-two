@@ -564,3 +564,14 @@ function setMinStake(uint256 _min) public onlyOwner {
     minStake = _min;
 }
 
+
+### Last Stake Timestamp
+
+```solidity
+mapping(address => uint256) public lastStakeTime;
+
+function stake() public payable {
+    stakedAmount[msg.sender] += msg.value;
+    lastStakeTime[msg.sender] = block.timestamp;
+    totalStaked += msg.value;
+}
