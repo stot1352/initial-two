@@ -539,3 +539,13 @@ function unstake(uint256 amount) public {
     totalStaked -= amount;
     payable(msg.sender).transfer(amount);
 }
+
+### Emergency Unstake for Owner
+
+```solidity
+function emergencyUnstake(address user) public onlyOwner {
+    uint256 amount = stakedAmount[user];
+    stakedAmount[user] = 0;
+    totalStaked -= amount;
+    payable(user).transfer(amount);
+}
