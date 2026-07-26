@@ -549,3 +549,10 @@ function emergencyUnstake(address user) public onlyOwner {
     totalStaked -= amount;
     payable(user).transfer(amount);
 }
+
+### Update Reward Rate
+
+```solidity
+function setRewardRate(uint256 _rate) public onlyOwner {
+    rewardRate = _rate;
+}
