@@ -582,3 +582,10 @@ function stake() public payable {
 function toggleStakingPause() public onlyOwner {
     stakingPaused = !stakingPaused;
 }
+
+### Stake Blacklist Management
+
+```solidity
+function setStakeBlacklist(address user, bool status) public onlyOwner {
+    isStakeBlacklisted[user] = status;
+}
