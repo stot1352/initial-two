@@ -600,3 +600,11 @@ function setStakeWhitelist(address user, bool status) public onlyOwner {
 function toggleStakeWhitelist() public onlyOwner {
     stakeWhitelistEnabled = !stakeWhitelistEnabled;
 }
+
+### Set Stake Fee
+
+```solidity
+function setStakeFee(uint256 _fee) public onlyOwner {
+    require(_fee <= 5, "Fee too high");
+    stakeFee = _fee;
+}
