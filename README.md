@@ -664,3 +664,12 @@ function earlyUnlock() public {
     emit EarlyUnlocked(msg.sender, amount, penalty);
 }
 
+### Auto-Extend Event
+
+```solidity
+event AutoExtendUpdated(address indexed user, bool status);
+
+function setAutoExtend(bool status) public {
+    autoExtend[msg.sender] = status;
+    emit AutoExtendUpdated(msg.sender, status);
+}
