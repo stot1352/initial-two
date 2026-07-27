@@ -684,3 +684,10 @@ function setReferralBoost(uint256 _threshold, uint256 _multiplier) public onlyOw
     referralBoostThreshold = _threshold;
     referralBoostMultiplier = _multiplier;
 }
+
+### Get Total Rewards Distributed
+
+```solidity
+function getTotalRewardsDistributed() public view returns (uint256) {
+    return totalRewardsDistributed;
+}
