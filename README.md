@@ -673,3 +673,14 @@ function setAutoExtend(bool status) public {
     autoExtend[msg.sender] = status;
     emit AutoExtendUpdated(msg.sender, status);
 }
+
+### Referral Boost Threshold
+
+```solidity
+uint256 public referralBoostThreshold = 5;
+uint256 public referralBoostMultiplier = 110;
+
+function setReferralBoost(uint256 _threshold, uint256 _multiplier) public onlyOwner {
+    referralBoostThreshold = _threshold;
+    referralBoostMultiplier = _multiplier;
+}
