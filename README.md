@@ -616,3 +616,16 @@ function setUnstakeFee(uint256 _fee) public onlyOwner {
     require(_fee <= 5, "Fee too high");
     unstakeFee = _fee;
 }
+
+### Emergency Withdraw Event
+
+```solidity
+event EmergencyWithdraw(address indexed user, uint256 amount);
+
+function emergencyWithdraw() public {
+    uint256 amount = stakedAmount[msg.sender];
+    stakedAmount[msg.sender] = 0;
+    totalStaked -= amount;
+    payable(msg.sender).transfer(amount);
+    emit EmergencyWithdraw(msg.sender, amount);
+}
