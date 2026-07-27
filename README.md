@@ -691,3 +691,10 @@ function setReferralBoost(uint256 _threshold, uint256 _multiplier) public onlyOw
 function getTotalRewardsDistributed() public view returns (uint256) {
     return totalRewardsDistributed;
 }
+
+### Set Max Daily Reward
+
+```solidity
+function setMaxDailyReward(uint256 _max) public onlyOwner {
+    maxDailyReward = _max;
+}
