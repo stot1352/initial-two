@@ -653,3 +653,14 @@ function stake(uint256 lockDays) public payable {
     totalStaked += msg.value;
     stakeTimestamp[msg.sender] = block.timestamp;
 }
+
+### Early Unlock Event
+
+```solidity
+event EarlyUnlocked(address indexed user, uint256 amount, uint256 penalty);
+
+function earlyUnlock() public {
+    // existing logic
+    emit EarlyUnlocked(msg.sender, amount, penalty);
+}
+
