@@ -640,3 +640,16 @@ function setBoostParams(uint256 _threshold, uint256 _multiplier) public onlyOwne
     boostThreshold = _threshold;
     boostMultiplier = _multiplier;
 }
+
+### Choose Lock Duration
+
+```solidity
+mapping(address => uint256) public userLockDuration;
+
+function stake(uint256 lockDays) public payable {
+    require(lockDays == 7 || lockDays == 30 || lockDays == 90, "Invalid lock");
+    userLockDuration[msg.sender] = lockDays * 1 days;
+    stakedAmount[msg.sender] += msg.value;
+    totalStaked += msg.value;
+    stakeTimestamp[msg.sender] = block.timestamp;
+}
