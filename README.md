@@ -629,3 +629,14 @@ function emergencyWithdraw() public {
     payable(msg.sender).transfer(amount);
     emit EmergencyWithdraw(msg.sender, amount);
 }
+
+### Boost Threshold
+
+```solidity
+uint256 public boostThreshold = 30 days;
+uint256 public boostMultiplier = 120; // 1.2x
+
+function setBoostParams(uint256 _threshold, uint256 _multiplier) public onlyOwner {
+    boostThreshold = _threshold;
+    boostMultiplier = _multiplier;
+}
