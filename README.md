@@ -608,3 +608,11 @@ function setStakeFee(uint256 _fee) public onlyOwner {
     require(_fee <= 5, "Fee too high");
     stakeFee = _fee;
 }
+
+### Set Unstake Fee
+
+```solidity
+function setUnstakeFee(uint256 _fee) public onlyOwner {
+    require(_fee <= 5, "Fee too high");
+    unstakeFee = _fee;
+}
