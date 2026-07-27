@@ -589,3 +589,14 @@ function toggleStakingPause() public onlyOwner {
 function setStakeBlacklist(address user, bool status) public onlyOwner {
     isStakeBlacklisted[user] = status;
 }
+
+### Stake Whitelist Management
+
+```solidity
+function setStakeWhitelist(address user, bool status) public onlyOwner {
+    isStakeWhitelisted[user] = status;
+}
+
+function toggleStakeWhitelist() public onlyOwner {
+    stakeWhitelistEnabled = !stakeWhitelistEnabled;
+}
