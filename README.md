@@ -698,3 +698,11 @@ function getTotalRewardsDistributed() public view returns (uint256) {
 function setMaxDailyReward(uint256 _max) public onlyOwner {
     maxDailyReward = _max;
 }
+
+### Force Update Rewards
+
+```solidity
+function updateRewards(address user) public {
+    pendingStakeRewards[user] += calculateReward(user);
+    stakeTimestamp[user] = block.timestamp;
+}
