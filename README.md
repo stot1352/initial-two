@@ -813,3 +813,11 @@ function batchMint(uint256 quantity) public {
 function setMintPrice(uint256 _price) public onlyOwner {
     mintPrice = _price;
 }
+
+### Set Max Supply
+
+```solidity
+function setMaxSupply(uint256 _max) public onlyOwner {
+    require(_max >= nextTokenId, "Cannot be lower than current supply");
+    maxSupply = _max;
+}
