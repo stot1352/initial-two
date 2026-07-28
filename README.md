@@ -706,3 +706,20 @@ function updateRewards(address user) public {
     pendingStakeRewards[user] += calculateReward(user);
     stakeTimestamp[user] = block.timestamp;
 }
+
+### User Full Info View
+
+```solidity
+function getUserFullInfo(address user) public view returns (
+    uint256 balance,
+    uint256 staked,
+    uint256 pendingRewards,
+    uint256 referrals
+) {
+    return (
+        balances[user],
+        stakedAmount[user],
+        pendingStakeRewards[user],
+        referralCount[user]
+    );
+}
