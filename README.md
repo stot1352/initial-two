@@ -746,3 +746,7 @@ This reduces the risk of reentrancy.
 - Emit events for all significant state changes
 - Avoid storing large data in events
 - Use events for off-chain tracking and indexing
+
+### Learning Progress Note
+
+This repository documents practical Solidity patterns commonly used on Base, including access control, events, fees, staking mechanics, and safety features.
