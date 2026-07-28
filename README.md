@@ -774,3 +774,13 @@ function transferFrom(address from, address to, uint256 tokenId) public {
     ownerOf[tokenId] = to;
     delete tokenApproval[tokenId];
 }
+
+### Update Balance on Transfer
+
+```solidity
+function transfer(address to, uint256 tokenId) public {
+    require(ownerOf[tokenId] == msg.sender, "Not owner");
+    ownerOf[tokenId] = to;
+    balanceOf[msg.sender] -= 1;
+    balanceOf[to] += 1;
+}
