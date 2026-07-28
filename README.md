@@ -723,3 +723,10 @@ function getUserFullInfo(address user) public view returns (
         referralCount[user]
     );
 }
+
+### Security Notes
+
+- Always use require for critical checks
+- Prefer pull over push for payments
+- Emit events for important state changes
+- Consider using OpenZeppelin libraries for production
