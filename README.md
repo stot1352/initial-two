@@ -750,3 +750,7 @@ This reduces the risk of reentrancy.
 ### Learning Progress Note
 
 This repository documents practical Solidity patterns commonly used on Base, including access control, events, fees, staking mechanics, and safety features.
+
+### Final Notes
+
+The code examples in this repo are intended for learning purposes. For production use, additional audits, testing, and security reviews are strongly recommended.
