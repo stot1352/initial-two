@@ -784,3 +784,15 @@ function transfer(address to, uint256 tokenId) public {
     balanceOf[msg.sender] -= 1;
     balanceOf[to] += 1;
 }
+
+### Burn Event
+
+```solidity
+event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
+
+function burn(uint256 tokenId) public {
+    require(ownerOf[tokenId] == msg.sender, "Not owner");
+    delete ownerOf[tokenId];
+    balanceOf[msg.sender] -= 1;
+    emit Transfer(msg.sender, address(0), tokenId);
+}
