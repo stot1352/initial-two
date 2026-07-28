@@ -764,3 +764,13 @@ function setTokenURI(uint256 tokenId, string memory uri) public {
     require(ownerOf[tokenId] == msg.sender, "Not owner");
     tokenURI[tokenId] = uri;
 }
+
+### Safe Transfer Check
+
+```solidity
+function transferFrom(address from, address to, uint256 tokenId) public {
+    require(ownerOf[tokenId] == from, "Wrong owner");
+    require(msg.sender == from || msg.sender == tokenApproval[tokenId], "Not approved");
+    ownerOf[tokenId] = to;
+    delete tokenApproval[tokenId];
+}
