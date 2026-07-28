@@ -806,3 +806,10 @@ function batchMint(uint256 quantity) public {
     require(quantity > 0 && quantity <= maxBatchSize, "Invalid quantity");
     // mint logic
 }
+
+### Set Mint Price
+
+```solidity
+function setMintPrice(uint256 _price) public onlyOwner {
+    mintPrice = _price;
+}
