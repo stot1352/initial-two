@@ -730,3 +730,12 @@ function getUserFullInfo(address user) public view returns (
 - Prefer pull over push for payments
 - Emit events for important state changes
 - Consider using OpenZeppelin libraries for production
+
+### Checks-Effects-Interactions Pattern
+
+Best practice order:
+1. Checks (require statements)
+2. Effects (update state)
+3. Interactions (external calls)
+
+This reduces the risk of reentrancy.
