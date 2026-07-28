@@ -754,3 +754,13 @@ This repository documents practical Solidity patterns commonly used on Base, inc
 ### Final Notes
 
 The code examples in this repo are intended for learning purposes. For production use, additional audits, testing, and security reviews are strongly recommended.
+
+### NFT Metadata Idea
+
+```solidity
+mapping(uint256 => string) public tokenURI;
+
+function setTokenURI(uint256 tokenId, string memory uri) public {
+    require(ownerOf[tokenId] == msg.sender, "Not owner");
+    tokenURI[tokenId] = uri;
+}
