@@ -796,3 +796,13 @@ function burn(uint256 tokenId) public {
     balanceOf[msg.sender] -= 1;
     emit Transfer(msg.sender, address(0), tokenId);
 }
+
+### Max Batch Size
+
+```solidity
+uint256 public maxBatchSize = 10;
+
+function batchMint(uint256 quantity) public {
+    require(quantity > 0 && quantity <= maxBatchSize, "Invalid quantity");
+    // mint logic
+}
