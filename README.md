@@ -739,3 +739,10 @@ Best practice order:
 3. Interactions (external calls)
 
 This reduces the risk of reentrancy.
+
+### Event Best Practices
+
+- Index important parameters (address, ids)
+- Emit events for all significant state changes
+- Avoid storing large data in events
+- Use events for off-chain tracking and indexing
