@@ -821,3 +821,14 @@ function setMaxSupply(uint256 _max) public onlyOwner {
     require(_max >= nextTokenId, "Cannot be lower than current supply");
     maxSupply = _max;
 }
+
+### Mint Funds Event
+
+```solidity
+event FundsWithdrawn(address indexed owner, uint256 amount);
+
+function withdrawFunds() public onlyOwner {
+    uint256 balance = address(this).balance;
+    payable(owner).transfer(balance);
+    emit FundsWithdrawn(owner, balance);
+}
