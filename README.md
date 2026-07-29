@@ -832,3 +832,10 @@ function withdrawFunds() public onlyOwner {
     payable(owner).transfer(balance);
     emit FundsWithdrawn(owner, balance);
 }
+
+### Toggle Minting Pause
+
+```solidity
+function toggleMintingPause() public onlyOwner {
+    mintingPaused = !mintingPaused;
+}
